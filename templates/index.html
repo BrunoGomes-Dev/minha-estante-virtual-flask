@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home - Minha Estante{% endblock %}
+
+{% block content %}
+<div class="book-list-container">
+    {% for book in books %}
+        <a href="{{ url_for('book_details', book_id=book.id) }}" class="book-card">
+            <img src="{{book.image_url}}" alt="book cover of {{book.title}}">
+            
+            <h3>{{book.title}}</h3>
+            
+            <div class="rating">
+                {% for i in range(5) %}
+                    {% if i+1 <= (book.stars | int) %}
+                        <span>★</span>
+                    {% else %}
+                        <span class="star-empty">★</span>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </a>
+    {% endfor %}
+</div>
+{% endblock %}

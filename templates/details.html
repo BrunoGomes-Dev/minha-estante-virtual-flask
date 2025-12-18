@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block title %}Detalhes do Livro - Minha Estante{% endblock %}
+
+{% block content %}
+<div class="book-details-container">
+    <a href="{{ url_for('index') }}" class="back-link">&larr; Voltar à Estante</a>
+
+    <div class="book-details-body">
+
+        <img class="book-cover" src="{{ book.image_url }}" alt="book cover of {{ book.title }}">
+
+            <div class="book-details-info">
+
+                <div>
+                    <h3>{{ book.title }}</h3>
+                    <div class="rating">
+                        {% for i in range(5) %}
+                            {% if i+1 <= (book.stars | int) %}
+                                <span>★</span>
+                            {% else %}
+                                <span class="star-empty">★</span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <p>👤 {{book.author}}</p>
+                    <p>🏷️ {{book.genre}}</p>
+                    <p>📅 {{book.read_date}}</p>
+                </div>
+
+                <div>
+                    <h3>Minha Resenha</h3>
+                    <p>{{book.review}}</p>
+                </div>
+
+            </div>
+
+    </div>
+
+</div>
+{% endblock %}
