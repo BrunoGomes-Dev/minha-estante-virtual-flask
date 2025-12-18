@@ -52,7 +52,8 @@ Se você quiser testar no seu computador:
 ├── static/             # Arquivos de estilo e ícones
 │   ├── css/style.css
 │   └── assets/image/logo-icon.svg
-└── templates/          # As páginas HTML do site (Jinja2)
+├── templates/          # As páginas HTML do site (Jinja2)
+└── requirements.txt
 ```
 ## Licensa
 
