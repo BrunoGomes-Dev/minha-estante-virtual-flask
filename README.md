@@ -53,7 +53,7 @@ Se você quiser testar no seu computador:
 │   ├── css/style.css
 │   └── assets/image/logo-icon.svg
 └── templates/          # As páginas HTML do site (Jinja2)
-
+```
 ## Licensa
 
 Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
